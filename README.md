@@ -111,6 +111,10 @@ in second terminal run
 ```javascript
 ./build/token-cli action transfer
 ```
+then enter the assetID which we earlier created and enter the recepient address in this case we are don't have other address so we will transfer to ourself and see the transaction in first terminal. enter the amount and continue. In first terminal output will be like:
+ ```javascript
+✅ YE67EXKLCE5QmmVvqvAP2rT1PqdMUUXQxCyJzz78n7rbEjLpV actor: token1rvzhmceq997zntgvravfagsks6w0ryud3rylh4cdvayry0dl97nsjzf3yp units: 472 summary (*actions.Transfer): [987 2G3hfJjWDfonTzGDD1fSdUqZbn97EPhxrBzzQdZrfFiCbtfSyt -> token1rvzhmceq997zntgvravfagsks6w0ryud3rylh4cdvayry0dl97nsjzf3yp]
+```
 
 ### Closing 
 run the command 
