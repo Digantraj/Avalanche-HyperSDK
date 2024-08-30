@@ -100,13 +100,17 @@ uri: http://127.0.0.1:49498/ext/bc/2TjbjoVxp8E5foRPTPZDqwSYKW4DywRdjQc93GxfZa7iQ
 metadata: DigiCoin supply: 10000 warp: false
 balance: 10000 ueybUhparatcswjoRheVyuhsTHyHDYR8PvDkWDaz7mjmi7rjo
 ```
-
-### Additional to watcht the blockchain
-run the command 
+### Transfer assets
+spilt terminal and in 1st run the command 
 ```javascript
 ./build/token-cli chain watch
 ```
 and from the listed chainID enter the desired index of the chainID and it will start live watching of the blockchain.
+enter 1 and execute it
+in second terminal run
+```javascript
+./build/token-cli action transfer
+```
 
 ### Closing 
 run the command 
