@@ -20,9 +20,9 @@ const (
 This project is execute on WSl on windows and GO installed inside wsl.<br>
 1) run ```git clone [https://github.com/Digantraj/Avalanche-HyperSDK]```
 2) run ```cd avax-advance-mod-2```
-3) Github is not allowing me to upload the files due to large no of files so I added the zip file.
-4) Extract the ```Avalanche hyperSDK project```
-5) cd ```'.\Avalanche hyperSDK project\' ```
+3) Extract the ```Avalanche hyperSDK project```
+4) cd ```'.\Avalanche hyperSDK project\' ```
+5) In terminal run command ```MODE="run-single" ./scripts/run.sh``` and this will start our machine with 1 subnet and for 2 subnet run ```./scripts/run.sh```. after this command output will look like.
 ```javascript
 Ran 4 of 4 Specs in 81.284 seconds
 PASS
@@ -114,3 +114,12 @@ run the command
 killall avalanche-network-runner
 ```
 This will close the blockchain we just deployed.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Authors
+
+- **Digant Raj**  
+  GitHub: [@Digant](https://github.com/Digantraj)
