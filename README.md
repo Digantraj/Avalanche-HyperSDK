@@ -5,17 +5,24 @@ This project uses HyperSDK that provides the ability to create a custom virtual 
 
 ## Description 
 ```consts/consts.go``` contains the constants that is accessible across the hyperVM. The HRP, Name, and Symbol constants define information about the TokenVM, including its Human-Readable Part (HRP), name, and symbol.
-
-```registry/registry.go``` contains the action that will be performed in the terminal during interaction.
+```GO
+const (
+	// TODO: choose a human-readable part for your hyperchain
+	HRP = "mynameisdigant"
+	// TODO: choose a name for your hyperchain
+	Name = "digant"
+	// TODO: choose a token symbol
+	Symbol = "dr"
+)
+```
 
 ## Steps of Execution
 This project is execute on WSl on windows and GO installed inside wsl.<br>
-1) run ```git clone https://github.com/Ms-10182/avax-advance-mod-2.git```
+1) run ```git clone [https://github.com/Digantraj/Avalanche-HyperSDK]```
 2) run ```cd avax-advance-mod-2```
 3) Github is not allowing me to upload the files due to large no of files so I added the zip file.
 4) Extract the ```Avalanche hyperSDK project```
 5) cd ```'.\Avalanche hyperSDK project\' ```
-6) In terminal run command ```MODE="run-single" ./scripts/run.sh``` and this will start our machine with 1 subnet and for 2 subnet run ```./scripts/run.sh```. after this command output will look like.
 ```javascript
 Ran 4 of 4 Specs in 81.284 seconds
 PASS
@@ -26,7 +33,7 @@ use the following command to terminate:
 
 killall avalanche-network-runner
 ```
-7) To start interaction run ```./scripts/build.sh```. output will be :
+6) To start interaction run ```./scripts/build.sh```. output will be :
 ```javascript
 /scripts/build.sh
 Building tokenvm in ./build/tHBYNu8ikqo4MWMHehC9iKB9mR5tB3DWzbkYmTfe9buWQ5GZ8
@@ -35,7 +42,7 @@ Building token-cli in ./build/token-cli
 This command will put the compiled CLI in ./build/token-cli.
 <b>NOTE- default address is ```token1rvzhmceq997zntgvravfagsks6w0ryud3rylh4cdvayry0dl97nsjzf3yp```</b>
 
-8) Lastly, we'll need to add the chains we created and the default key to the token-cli. run command:
+7) Lastly, we'll need to add the chains we created and the default key to the token-cli. run command:
 ```javascript
 ./build/token-cli key import demo.pk
 ./build/token-cli chain import-anr
@@ -48,15 +55,15 @@ To create an assest run the command:
 ```javascript
 ./build/token-cli action create-asset
 ```
-Enter the metadata (eg:GoCoin) and confirm
+Enter the metadata (eg:DigiCoin) and confirm
 output looks like:
 ```javascript
 database: .token-cli
 address: token1rvzhmceq997zntgvravfagsks6w0ryud3rylh4cdvayry0dl97nsjzf3yp
-chainID: 2vCjHv1ws8YirjkcjsaVotLhCeownJDVBhUJgtBpu6j9ucupgf
-metadata (can be changed later): GoCoin
-continue (y/n): y
-✅ txID: 2jce33uBTSa3yKrv7KngEdbwtyN4NBXfhGmx4Xtb6p6nPjtb9w
+chainID: 2TjbjoVxp8E5foRPTPZDqwSYKW4DywRdjQc93GxfZa7iQ9LsEA
+metadata (can be changed later): DigiCoin
+✔ continue (y/n): y█
+✅ txID: ueybUhparatcswjoRheVyuhsTHyHDYR8PvDkWDaz7mjmi7rjo
 ```
 <b>NOTE - txID is the assetID of your new asset.</b>
 
@@ -70,13 +77,13 @@ It would look like:
 ```javascript
 database: .token-cli
 address: token1rvzhmceq997zntgvravfagsks6w0ryud3rylh4cdvayry0dl97nsjzf3yp
-chainID: 2skpAtPgFs5v5v2nzWaZKVrfRVxPXAVyfMQANy6EpFjG8dMQTo
-assetID: 2fwV7cjRpH7jmK43BWtUc6uTo5Py6wKXBfdQ4CH6BwRMmEmdDe
-metadata: GoCoin supply: 0
+chainID: 2TjbjoVxp8E5foRPTPZDqwSYKW4DywRdjQc93GxfZa7iQ9LsEA
+assetID: ueybUhparatcswjoRheVyuhsTHyHDYR8PvDkWDaz7mjmi7rjo
+metadata: DigiCoin supply: 0
 recipient: token1rvzhmceq997zntgvravfagsks6w0ryud3rylh4cdvayry0dl97nsjzf3yp
-amount: 100
+amount: 10000
 continue (y/n): y
-✅ txID: 2hvyq3DSVHMwiWuJXPBy8T9LS2MjiX9Ki8ti625Vofrn7L1Ahi
+✅ txID: mpP4RSfUyMm9GCFn1NKzNr6ES1Hj4EswwCWbVJWxvP5dkwp62
 ```
 ### Step3 check balance
 run the command:
@@ -87,11 +94,11 @@ and enter the assetID of the token and output will be like:
 ```javascript
 database: .token-cli
 address: token1rvzhmceq997zntgvravfagsks6w0ryud3rylh4cdvayry0dl97nsjzf3yp
-chainID: 2skpAtPgFs5v5v2nzWaZKVrfRVxPXAVyfMQANy6EpFjG8dMQTo
-✔ assetID (use TKN for native token): 2fwV7cjRpH7jmK43BWtUc6uTo5Py6wKXBfdQ4CH6BwRMmEmdDe█
-uri: http://127.0.0.1:46526/ext/bc/2skpAtPgFs5v5v2nzWaZKVrfRVxPXAVyfMQANy6EpFjG8dMQTo
-metadata: GoCoin supply: 100 warp: false
-balance: 100 2fwV7cjRpH7jmK43BWtUc6uTo5Py6wKXBfdQ4CH6BwRMmEmdDe
+chainID: 2TjbjoVxp8E5foRPTPZDqwSYKW4DywRdjQc93GxfZa7iQ9LsEA
+assetID (use TKN for native token): ueybUhparatcswjoRheVyuhsTHyHDYR8PvDkWDaz7mjmi7rjo        
+uri: http://127.0.0.1:49498/ext/bc/2TjbjoVxp8E5foRPTPZDqwSYKW4DywRdjQc93GxfZa7iQ9LsEA        
+metadata: DigiCoin supply: 10000 warp: false
+balance: 10000 ueybUhparatcswjoRheVyuhsTHyHDYR8PvDkWDaz7mjmi7rjo
 ```
 
 ### Additional to watcht the blockchain
